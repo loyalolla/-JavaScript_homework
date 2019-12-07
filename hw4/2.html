@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+    "use strict";
+    /*Предположим, есть сущность корзины. Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров. Товары в корзине хранятся в массиве. Задачи:
+    a) Организовать такой массив для хранения товаров в корзине;
+    b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.*/
+
+    let basket_price = 0;
+    const Basket = [{ name: 'Яблоко', price: 60 }, { name: 'Апельсин', price: 35 }];
+    Basket.push({ name: 'Лимон', price: 50 });
+
+    function countBasketPrice(x) {
+        for (let i = 0; i < Basket.length; i++) {
+            basket_price = basket_price + Basket[i].price;
+        }
+        return basket_price;
+    }
+    document.write('<h2>В корзине:</h2>');
+    for (let i = 0; i < Basket.length; i++) {
+        document.write(Basket[i].name + ' — ' + Basket[i].price + ' руб</br>');
+    }
+    document.write('</br><b>Стоимость заказа: ' + countBasketPrice(Basket) + '</b>');
+</script>

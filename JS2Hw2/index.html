@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Интернет-магазин</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--insertAdjacentHTML-->
+    <!--beforebegin-->
+    <p>
+        <!--afterbegin-->
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <!--beforeend-->
+    </p>
+    <!--afterend-->
+    <header>
+        <div class="logo">Интернет-магазин</div>
+        <button class="btn-cart" type="button" onclick="toggleCart()">Корзина: <span class="js-cart-items-qty">0</span></button>
+        <div class="cart"></div>
+    </header>
+    <main>
+        <div class="products"></div>
+    </main>
+    <script src="ProductItem.js"></script>
+    <script src="ProductList.js"></script>
+    <script src="Cart.js"></script>
+    <script src="GoodsItem.js"></script>
+    <script>
+        const cartVisibleClassname = 'cartVisible';
+        const toggleCart = () => {
+            const cartEl = document.getElementsByClassName('cart')[0];
+
+            const isCartVisible = cartEl.className.indexOf(cartVisibleClassname) !== -1;
+
+            if (isCartVisible) {
+                cartEl.className = cartEl.className.replace(cartVisibleClassname, '');
+            } else {
+                cartEl.className += ` ${cartVisibleClassname}`;
+            }
+        };
+
+        const bindEvents = (cart) => {
+            document.addEventListener('click', function (event) {
+                const target = event.target;
+                if (
+                    target &&
+                    target.className &&
+                    target.className.indexOf('js-buy-btn') !== -1
+                ) {
+                    console.log(target);
+                    const id = target.getAttribute('data-id');
+                    const price = target.getAttribute('data-price');
+                    const title = target.getAttribute('data-title');
+
+                    cart.addCartItem({id, price, title});
+                }
+            });
+        };
+
+        const main = () => {
+            const list = new window.ProductList();
+            const cart = new window.Cart();
+            bindEvents(cart);
+        };
+
+        main();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--insertAdjacentHTML-->
+    <!--beforebegin-->
+    <p>
+        <!--afterbegin-->
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <!--beforeend-->
+    </p>
+    <!--afterend-->
+    <header>
+        <div class="logo">Корзина</div>
+        <button class="btn-cart" type="button" onclick="window.location.href= 'index.html'">Интернет-Магазин </button>
+    </header>
+    <main>
+        <div class="container table-shopping">
+            <div class="table-row__head">
+                <div>Детали заказа</div>
+                <div>Цена</div>
+                <div>Кол-во</div>
+                <div>Доставка</div>
+                <div>Итого</div>
+            </div>
+            <div class="table-row">
+                <figure class="table-details"><a href="#"><img src="img/notebook.jpg" alt="Ноутбук"></a>
+                    <figcaption>
+                        <p class="name">Ноутбук</p>
+                    </figcaption>
+                </figure>
+                <div>45600</div>
+                <div><input class="quantity-of-good" type="number" value="1" min="1" max="10000" good-id="123"></div>
+                <div>FREE</div>
+                <div>45600</div>
+                <div>
+                    <a class="miss" href="#" good-id="123">
+                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <fieldset>
+                <div class="shopping-total">
+                    <p>Итого &nbsp;&nbsp;&nbsp; 46600</p>
+                    <p class="grand">
+                        Общая сумма заказа &nbsp;&nbsp;&nbsp; <span>46600</span>
+                    </p>
+                    <hr>
+                    <div class="table-shopping__bottom">
+                        <button class="btn-cart" type="button">Продолжить оформление заказа</button>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="table-shopping__bottom">
+                <button id="basket-btn" class="btn-cart clear-button" type="button">Очистить корзину</button>
+            </div>
+        </div>
+    </main>
+    <script src="GoodsList.js"></script>
+    <script src="Cart.js"></script>
+    <script src="GoodsItem.js"></script>
+</body>
+</html>

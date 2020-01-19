@@ -59,8 +59,11 @@
                     const id = target.getAttribute('data-id');
                     const price = target.getAttribute('data-price');
                     const title = target.getAttribute('data-title');
-
-                    cart.addCartItem({id, price, title});
+                    const src = target.getAttribute('data-src');
+                    cart.addCartItem({id, price, title, src});
+                    const totalItems = cart.goods.length;
+                    const totalItemsEl = document.getElementsByClassName('js-cart-items-qty')[0];
+                    totalItemsEl.innerHTML = totalItems;
                 }
             });
         };

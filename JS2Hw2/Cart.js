@@ -12,12 +12,11 @@ class Cart {
 
     //Метод для вывода итоговой суммы корзины
     totalCartPrice() {
-        let totalPrice = document.getElementById('goods-list__total');
         let sum = 0;
         this.goods.forEach(good => {
-            sum += good.price
+            sum += Number(good.price);
         });
-        totalPrice.innerText = `Итого  ${sum} рублей`;
+       return sum;
     }
 
     render() {
@@ -28,6 +27,7 @@ class Cart {
             const goodItem = new window.GoodsItem(good.title, good.price, good.src);
             listHtml += goodItem.render();
         });
+        listHtml += `<span> Итого  ${this.totalCartPrice()} рублей </span>`;
         goodsList.innerHTML = listHtml;
     }
 }

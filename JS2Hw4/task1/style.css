@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    font-style: italic;
+    box-sizing: border-box;
+    color: #ffffff;
+    background-image: url(https://w-dog.ru/wallpapers/12/16/492147555653687/bukvy-anglijskij-xaos.jpg);
+}
+.container {
+    height: 100vh;
+    position: relative;
+    padding: 0 20px;
+}
+.container h1 {
+    margin: 0;
+    padding-top: 35px;
+    text-align: center;
+}
+.wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 35px 0;
+}
+#button {
+    visibility: hidden;
+    position: absolute;
+}
+.label {
+    position: absolute;
+    border: 2px solid #fff;
+    width: 300px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.5s all ease;
+    transform: scale(0.8);
+    text-align: center;
+    line-height: 52px;
+    font-size: 26px;
+    text-transform: uppercase;
+    color: #fff;
+    top: 50%;
+}
+.modal {
+    border-radius: 50%;
+    transition: 0.5s all ease;
+    z-index: 1;
+}
+.close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 120px;
+    right: 25px;
+    cursor: pointer;
+    display: none;
+}
+.main {
+    display: none;
+}
+.close:before, .close:after {
+    position: absolute;
+    content: '';
+    width: 3px;
+    height: 17px;
+    background: #fff;
+}
+.close:before {
+    transform: rotate(45deg);
+}
+.close:after {
+    transform: rotate(-45deg);
+}
+#button:checked ~ .label {
+    /*transition: 0.5s all ease;*/
+    /*transform: scale(1);*/
+}
+#button:checked ~ .modal {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+#button:checked ~ .modal .main {
+    display: block;
+}
+#button:checked ~ .modal .close {
+    display: block;
+}
+.main {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.form {
+    padding: 0 10px 10px 10px;
+}
+.message {
+    width: 100%;
+    resize: none;
+    outline: none;
+    font-size: 15px;
+    background-color: #E9EFF6;
+    border: black 1px solid;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.inputs {
+    display: flex;
+    justify-content: center;
+}
+.input_name {
+    height: 50px;
+    width: 30%;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 3px;
+    font-size: 20px;
+    outline: none;
+}
+.input_name_check {
+    border-radius: 50px;
+    border-color: #47969e;
+}
+.input_name_check:hover {
+    background-color:#47969e;
+}
+
+.input_name_load {
+    border-radius: 50px;
+    border-color: yellow;
+}
+.input_name_load:hover {
+    background-color: #EDF17E;
+}
+
+.input_name_clear {
+    border-radius: 50px;
+    border-color:#a01313;
+}
+.input_name_clear:hover {
+    background-color:#a01313;
+}

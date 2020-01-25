@@ -21,9 +21,3 @@ Vue.component('search', {
         </div>
     `
 });
-
-
-
-
-
-

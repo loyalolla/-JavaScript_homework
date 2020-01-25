@@ -16,6 +16,7 @@
             <cart ref="cart"></cart>
         </header>
         <main>
+           <div v-if="error"> <error/> </div>
             <products ref="products"></products>
         </main>
     </div>
@@ -26,6 +27,7 @@
     <script src="js/CartComp.js"></script>
     <script src="js/ProductComp.js"></script>
     <script src="js/Search.js"></script>
+    <script src="js/Error.js"></script>
     <script src="js/main.js"></script>
 </body>
 
